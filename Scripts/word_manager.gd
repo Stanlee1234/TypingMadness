@@ -38,9 +38,10 @@ func _on_request_completed(result: int, response_code: int, _headers: PackedStri
 func load_local_words() -> void:
 	var file = FileAccess.open("res://words.txt", FileAccess.READ)
 	while not file.eof_reached():
-		var word = file.get_line().strip_edges()
+		var word = file.get_line().strip_edges().to_lower() 
 		if word != "":
 			valid_words.append(word)
+	dictionary_loaded.emit()
 
 func is_word_valid(word_to_check: String) -> bool:
 	return valid_words.has(word_to_check.to_lower())
