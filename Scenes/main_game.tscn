@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://jsgo8crhpdqj"]
+
+[ext_resource type="Script" uid="uid://deqvhb4e0kvyl" path="res://Scripts/main_game.gd" id="1_l756w"]
+
+[node name="MainGame" type="Control" unique_id=646104290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l756w")
+
+[node name="TerminalInput" type="LineEdit" parent="." unique_id=2104461715]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -104.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[connection signal="text_submitted" from="TerminalInput" to="." method="_on_terminal_input_text_submitted"]

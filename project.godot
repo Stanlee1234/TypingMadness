@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="TypingMadness"
+run/main_scene="uid://jsgo8crhpdqj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+WordManager="*uid://c1glmm4bjxjkq"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [physics]
 
