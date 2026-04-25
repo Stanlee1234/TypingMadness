@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cqfcsyly7f68b"]
+
+[ext_resource type="Script" uid="uid://3h4lxqrwk1lj" path="res://Scripts/fruit.gd" id="1_o20pv"]
+[ext_resource type="FontFile" uid="uid://d1jljn170pbae" path="res://Assets/Fonts/cmunvt.ttf" id="2_t6yr1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bpj0h"]
+load_path = "res://.godot/imported/Fruit+.png-e87bedb64b2ab51135983fb5ab9769e2.ctex"
+
+[node name="Virus" type="Area2D" unique_id=637311673]
+script = ExtResource("1_o20pv")
+
+[node name="Label" type="Label" parent="." unique_id=350558988]
+offset_left = -328.0
+offset_top = 29.0
+offset_right = 328.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.68235296, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_t6yr1")
+theme_override_font_sizes/font_size = 21
+text = "TESTING TEXT"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1622771409]
+scale = Vector2(3, 3)
+texture = SubResource("CompressedTexture2D_bpj0h")
+hframes = 38
+vframes = 6

@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://cnpi53ihbirua"]
+
+[ext_resource type="Script" uid="uid://wt6dsq3jfg3x" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="FontFile" uid="uid://c4ru62wi6sfo5" path="res://Assets/Fonts/SDGlitch_Demo.ttf" id="3_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://cvwo54qsanrws" path="res://Assets/background_img.png" id="4_ce3w2"]
+[ext_resource type="Shader" uid="uid://b4i632mtv5wam" path="res://Scripts/scroll.gdshader" id="4_n45e2"]
+[ext_resource type="FontFile" uid="uid://d1jljn170pbae" path="res://Assets/Fonts/cmunvt.ttf" id="4_opfnp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opfnp"]
+shader = ExtResource("4_n45e2")
+shader_parameter/SPEED = 0.13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Main_Menu" type="Control" unique_id=1786076981]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="Bkg" type="TextureRect" parent="." unique_id=950017581]
+z_index = -4096
+material = SubResource("ShaderMaterial_opfnp")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("4_ce3w2")
+stretch_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=891494663]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -3.0
+offset_right = 122.5
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.62969893, 0.93954855, 0.9769382, 1)
+theme_override_colors/font_focus_color = Color(0.39989382, 0.88826257, 0.9409068, 1)
+theme_override_colors/font_pressed_color = Color(0.1531378, 0.59244573, 0.63482785, 1)
+theme_override_colors/font_hover_color = Color(0.29539204, 0.8377677, 0.8936647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.29411766, 0.8392157, 0.89411765, 1)
+theme_override_fonts/font = ExtResource("4_opfnp")
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ce3w2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
+text = "Start Game "
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1382107203]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -501.25
+offset_top = -274.0
+offset_right = 501.25
+offset_bottom = -99.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_1ehe0")
+theme_override_fonts/bold_font = ExtResource("3_1ehe0")
+theme_override_fonts/bold_italics_font = ExtResource("3_1ehe0")
+theme_override_fonts/italics_font = ExtResource("3_1ehe0")
+theme_override_fonts/mono_font = ExtResource("3_1ehe0")
+theme_override_font_sizes/normal_font_size = 150
+theme_override_font_sizes/bold_font_size = 150
+theme_override_font_sizes/bold_italics_font_size = 150
+theme_override_font_sizes/italics_font_size = 150
+theme_override_font_sizes/mono_font_size = 150
+bbcode_enabled = true
+text = "[b][tornado radius=5 freq=2][rainbow freq=0.16]Typing Madness 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="." unique_id=308231605]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -100.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_1ehe0")
+theme_override_fonts/bold_font = ExtResource("3_1ehe0")
+theme_override_fonts/bold_italics_font = ExtResource("3_1ehe0")
+theme_override_fonts/italics_font = ExtResource("3_1ehe0")
+theme_override_fonts/mono_font = ExtResource("3_1ehe0")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[wave]A fun, infinite typing game"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

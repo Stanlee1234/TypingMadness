@@ -2,9 +2,11 @@ extends Node2D
 
 var valid_words: Array = []
 var api_url: String = "https://random-word-api.herokuapp.com/all"
+var is_ready: bool = false
 
 @onready var http_request: HTTPRequest = HTTPRequest.new()
 
+signal words_loaded
 signal dictionary_loaded
 
 func _ready() -> void:
@@ -21,13 +23,16 @@ func fetch_words_from_api() -> void:
 func _on_request_completed(result: int, response_code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
 	if result == HTTPRequest.RESULT_SUCCESS and response_code == 200:
 		var json = JSON.new()
-		var error = json.parse(body.get_string_from_utf8())
-		
+		var raw_text = body.get_string_from_utf8()
+		var clean_text = raw_text
+		var error = json.parse(clean_text)
+
 		if error == OK:
 			valid_words = json.data
-			print("Success! Loaded %d words from the API." % valid_words.size())
-			# ADD THIS LINE HERE:
-			dictionary_loaded.emit() 
+			print("Loaded %d words from the API." % valid_words.size())
+			words_loaded.emit()
+			dictionary_loaded.emit()
+			is_ready = true
 		else:
 			print("Failed to parse API JSON. Falling back to local dictionary.")
 			load_local_words()
@@ -42,6 +47,13 @@ func load_local_words() -> void:
 		if word != "":
 			valid_words.append(word)
 	dictionary_loaded.emit()
-
+	is_ready = true
+	
 func is_word_valid(word_to_check: String) -> bool:
 	return valid_words.has(word_to_check.to_lower())
+
+func get_random_word() -> String:
+	if valid_words.is_empty():
+		return "error"
+		
+	return valid_words.pick_random()

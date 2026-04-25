@@ -1,20 +1,43 @@
 extends Control
 
-@onready var terminal_input = $TerminalInput
+var current_virus = null
+var virus_scene = preload("res://Scenes/fruit.tscn")
 
 func _ready() -> void:
-	terminal_input.editable = false
-	terminal_input.placeholder_text = "Establishing Connection..."
-	WordManager.dictionary_loaded.connect(_on_dictionary_loaded)
+	if WordManager.is_ready:
+		_on_dictionary_loaded()
+	else:
+		WordManager.dictionary_loaded.connect(_on_dictionary_loaded)
 
 func _on_dictionary_loaded() -> void:
-	terminal_input.editable = true
-	terminal_input.placeholder_text = "Enter override code..."
-	terminal_input.grab_focus()
+	print("Game Ready! Start mashing keys!")
+	spawn_virus()
 
-func _on_terminal_input_text_submitted(new_text: String) -> void:
-	if WordManager.is_word_valid(new_text):
-		print("ACCESS GRANTED: '" + new_text + "' is a valid code.")
-	else:
-		print("SYSTEM ERROR: '" + new_text + "' rejected.")
-	terminal_input.clear()
+func spawn_virus() -> void:
+	var new_virus = virus_scene.instantiate()
+	new_virus.position = Vector2(randf_range(100, 1000), -50) 
+	add_child.call_deferred(new_virus)
+	current_virus = new_virus
+	new_virus.tree_exited.connect(spawn_virus)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.unicode == 0:
+			return
+			
+		var typed_char: String = String.chr(event.unicode).to_lower()
+		if typed_char != "":
+			if is_instance_valid(current_virus):
+				var correct_key = current_virus.type_letter(typed_char)
+
+				if not correct_key:
+					shake_screen()
+
+func shake_screen() -> void:
+	var tween = create_tween()
+	var strength = 3.0
+	for i in range(5):
+		var random_movement = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)) * strength
+		tween.tween_property(self, "position", random_movement, 0.02)
+		tween.tween_property(self, "position", Vector2.ZERO, 0.02)

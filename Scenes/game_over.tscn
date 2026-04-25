@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dhnpa85qsimtv"]
+
+[ext_resource type="Script" uid="uid://ce8hlbydi1ucv" path="res://Scripts/game_over.gd" id="1_ojehl"]
+[ext_resource type="FontFile" uid="uid://c4ru62wi6sfo5" path="res://Assets/Fonts/SDGlitch_Demo.ttf" id="2_8fo1c"]
+[ext_resource type="FontFile" uid="uid://cs8d2cbbphqko" path="res://Assets/Fonts/Pixeled.ttf" id="3_ek8ke"]
+
+[node name="Game_Over" type="Control" unique_id=603467969]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ojehl")
+
+[node name="You Died" type="Label" parent="." unique_id=127016565]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -154.5
+offset_right = 20.0
+offset_bottom = -21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1.540184e-06, 0.78505296, 0.9160942, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5921569)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_8fo1c")
+theme_override_font_sizes/font_size = 150
+text = "You Died!"
+
+[node name="Label" type="Label" parent="." unique_id=1400462714]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -23.75
+offset_right = 576.0
+offset_bottom = 96.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5921569)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_ek8ke")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="." unique_id=597731046]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = 128.5
+offset_right = 43.5
+offset_bottom = 159.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Try again?
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
