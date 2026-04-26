@@ -57,7 +57,7 @@
 ## About The Project
 <br />
 
-[![Product Screenshot][product-screenshot]](https://waka.hackclub.com)
+[![Product Screenshot][product-screenshot]](https://hackatime.hackclub.com)
 
 This tool can successfully measure time spent building your games or apps in Godot.
 <br />
