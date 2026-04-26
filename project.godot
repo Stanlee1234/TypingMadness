@@ -14,7 +14,6 @@ config/name="TypingMadness"
 run/main_scene="uid://bemk1852vq0t4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.96862745, 0.92941177, 0.84705883, 1)
-boot_splash/image="uid://djl5ctffbg110"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=1000
 
