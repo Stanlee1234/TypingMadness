@@ -5,6 +5,8 @@ extends Control
 func _ready():
 	label.text = FactManager.current_fact
 	FactManager.fetch_new_fact()
+	var tween = create_tween()
+	tween.tween_property(Bgm, "volume_db", -20.0, 1.0)
 
 func _on_main_menu_mouse_entered() -> void:
 	Blip.play()

@@ -7,6 +7,7 @@ var target_word: String = ""
 
 @onready var label = $Label
 @onready var explode = $Explode
+@onready var click = $Click
 var explosion_scene = preload("res://Scenes/fruit_explosion.tscn")
 
 
@@ -26,20 +27,29 @@ func _process(delta: float) -> void:
 
 func type_letter(letter: String) -> bool:
 	if target_word.begins_with(letter):
+		label.modulate = Color.WHITE 
+		click.play()
 		target_word = target_word.substr(1)
 		label.text = target_word
+		
 		if target_word == "":
 			print("Fruit destroyed!")
+			
 			if explosion_scene:
 				var explosion = explosion_scene.instantiate()
 				explosion.global_position = global_position
 				get_tree().current_scene.add_child(explosion)
+			
 			explode.reparent(get_tree().current_scene)
 			explode.play()
 			explode.finished.connect(explode.queue_free)
+			
 			queue_free()
 			
 		return true 
 		
 	else:
+		label.modulate = Color(0.957, 0.0, 0.0, 1.0)
+		var tween = create_tween()
+		tween.tween_property(label, "modulate", Color.WHITE, 0.15)
 		return false 

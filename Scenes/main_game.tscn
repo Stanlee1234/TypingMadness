@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://jsgo8crhpdqj"]
 
 [ext_resource type="Script" uid="uid://deqvhb4e0kvyl" path="res://Scripts/main_game.gd" id="1_l756w"]
+[ext_resource type="Shader" uid="uid://b4i632mtv5wam" path="res://Scripts/scroll.gdshader" id="2_0e3vx"]
+[ext_resource type="Texture2D" uid="uid://cvwo54qsanrws" path="res://Assets/background_img.png" id="3_6j5ir"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgc0q"]
+shader = ExtResource("2_0e3vx")
+shader_parameter/SPEED = 0.13
 
 [node name="MainGame" type="Control" unique_id=646104290]
 layout_mode = 3
@@ -10,3 +16,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l756w")
+
+[node name="Bkg" type="TextureRect" parent="." unique_id=1209828432]
+z_index = -4096
+material = SubResource("ShaderMaterial_mgc0q")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("3_6j5ir")
+stretch_mode = 1

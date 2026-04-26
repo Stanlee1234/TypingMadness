@@ -8,6 +8,8 @@ func _ready() -> void:
 		_on_dictionary_loaded()
 	else:
 		WordManager.dictionary_loaded.connect(_on_dictionary_loaded)
+	var tween = create_tween()
+	tween.tween_property(Bgm, "volume_db", -27.0, 1.0)
 
 func _on_dictionary_loaded() -> void:
 	print("Game Ready! Start mashing keys!")

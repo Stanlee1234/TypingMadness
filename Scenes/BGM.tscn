@@ -4,6 +4,6 @@
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1658534442]
 stream = ExtResource("1_jijru")
-volume_db = -27.701
+volume_db = -15.0
 autoplay = true
 parameters/looping = true
