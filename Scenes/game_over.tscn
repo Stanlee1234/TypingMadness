@@ -2,7 +2,22 @@
 
 [ext_resource type="Script" uid="uid://ce8hlbydi1ucv" path="res://Scripts/game_over.gd" id="1_ojehl"]
 [ext_resource type="FontFile" uid="uid://c4ru62wi6sfo5" path="res://Assets/Fonts/SDGlitch_Demo.ttf" id="2_8fo1c"]
-[ext_resource type="FontFile" uid="uid://cs8d2cbbphqko" path="res://Assets/Fonts/Pixeled.ttf" id="3_ek8ke"]
+[ext_resource type="Shader" uid="uid://b4i632mtv5wam" path="res://Scripts/scroll.gdshader" id="2_14u15"]
+[ext_resource type="Texture2D" uid="uid://cvwo54qsanrws" path="res://Assets/background_img.png" id="3_j3ryr"]
+[ext_resource type="FontFile" uid="uid://d1jljn170pbae" path="res://Assets/Fonts/cmunvt.ttf" id="5_14u15"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rjluv"]
+shader = ExtResource("2_14u15")
+shader_parameter/SPEED = 0.13
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14u15"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3ryr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjluv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Game_Over" type="Control" unique_id=603467969]
 layout_mode = 3
@@ -14,6 +29,25 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ojehl")
+
+[node name="Bkg" type="TextureRect" parent="." unique_id=1148765992]
+z_index = -4096
+material = SubResource("ShaderMaterial_rjluv")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_j3ryr")
+stretch_mode = 1
 
 [node name="You Died" type="Label" parent="." unique_id=127016565]
 layout_mode = 1
@@ -38,7 +72,7 @@ theme_override_fonts/font = ExtResource("2_8fo1c")
 theme_override_font_sizes/font_size = 150
 text = "You Died!"
 
-[node name="Label" type="Label" parent="." unique_id=1400462714]
+[node name="Fact" type="Label" parent="." unique_id=1400462714]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,25 +90,64 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("3_ek8ke")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("5_14u15")
+theme_override_font_sizes/font_size = 29
+text = "Testing Text"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Button" type="Button" parent="." unique_id=597731046]
+[node name="TryAgain" type="Button" parent="." unique_id=1010764652]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -43.5
-offset_top = 128.5
-offset_right = 43.5
-offset_bottom = 159.5
+offset_left = -144.0
+offset_top = 76.0
+offset_right = 146.0
+offset_bottom = 141.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Try again?
+theme_override_colors/font_color = Color(0.62969893, 0.93954855, 0.9769382, 1)
+theme_override_colors/font_focus_color = Color(0.39989382, 0.88826257, 0.9409068, 1)
+theme_override_colors/font_pressed_color = Color(0.1531378, 0.59244573, 0.63482785, 1)
+theme_override_colors/font_hover_color = Color(0.29539204, 0.8377677, 0.8936647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.29411766, 0.8392157, 0.89411765, 1)
+theme_override_fonts/font = ExtResource("5_14u15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_14u15")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j3ryr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rjluv")
+text = "Try again?"
+
+[node name="MainMenu" type="Button" parent="." unique_id=494246281]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = 151.5
+offset_right = 145.0
+offset_bottom = 216.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.62969893, 0.93954855, 0.9769382, 1)
+theme_override_colors/font_focus_color = Color(0.39989382, 0.88826257, 0.9409068, 1)
+theme_override_colors/font_pressed_color = Color(0.1531378, 0.59244573, 0.63482785, 1)
+theme_override_colors/font_hover_color = Color(0.29539204, 0.8377677, 0.8936647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.29411766, 0.8392157, 0.89411765, 1)
+theme_override_fonts/font = ExtResource("5_14u15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_14u15")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j3ryr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rjluv")
+text = "Main Menu
 "
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="TryAgain" to="." method="_on_try_again_mouse_entered"]
+[connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="mouse_entered" from="MainMenu" to="." method="_on_main_menu_mouse_entered"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

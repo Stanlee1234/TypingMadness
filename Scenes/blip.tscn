@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b4ovntxkex5qq"]
+
+[ext_resource type="AudioStream" uid="uid://bybgqoum0e0pc" path="res://Assets/blip.mp3" id="1_p7p15"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=483527950]
+stream = ExtResource("1_p7p15")
+volume_db = -15.0

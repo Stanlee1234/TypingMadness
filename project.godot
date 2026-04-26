@@ -11,15 +11,20 @@ config_version=5
 [application]
 
 config/name="TypingMadness"
-run/main_scene="uid://cnpi53ihbirua"
+run/main_scene="uid://bemk1852vq0t4"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0.96862745, 0.92941177, 0.84705883, 1)
+boot_splash/image="uid://djl5ctffbg110"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 
 WordManager="*uid://c1glmm4bjxjkq"
 FactManager="*uid://qskp7yb4q87m"
 Bgm="*uid://sgthb6s6oieh"
+Blip="*uid://b4ovntxkex5qq"
+SceneManager="*uid://j20v4cg7v8m1"
 
 [display]
 

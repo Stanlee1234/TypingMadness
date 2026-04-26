@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://3h4lxqrwk1lj" path="res://Scripts/fruit.gd" id="1_o20pv"]
 [ext_resource type="FontFile" uid="uid://d1jljn170pbae" path="res://Assets/Fonts/cmunvt.ttf" id="2_t6yr1"]
+[ext_resource type="AudioStream" uid="uid://bu4kf7py2jrqn" path="res://Assets/explode.wav" id="3_j64f1"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bpj0h"]
 load_path = "res://.godot/imported/Fruit+.png-e87bedb64b2ab51135983fb5ab9769e2.ctex"
 
-[node name="Virus" type="Area2D" unique_id=637311673]
+[node name="Fruit" type="Area2D" unique_id=637311673]
+scale = Vector2(2, 2)
 script = ExtResource("1_o20pv")
 
 [node name="Label" type="Label" parent="." unique_id=350558988]
@@ -25,3 +27,6 @@ scale = Vector2(3, 3)
 texture = SubResource("CompressedTexture2D_bpj0h")
 hframes = 38
 vframes = 6
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="." unique_id=775048764]
+stream = ExtResource("3_j64f1")

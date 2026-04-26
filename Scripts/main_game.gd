@@ -32,11 +32,10 @@ func _unhandled_input(event: InputEvent) -> void:
 				var correct_key = current_virus.type_letter(typed_char)
 
 				if not correct_key:
-					shake_screen()
+					shake_screen(3.0)
 
-func shake_screen() -> void:
+func shake_screen(strength:float) -> void:
 	var tween = create_tween()
-	var strength = 3.0
 	for i in range(5):
 		var random_movement = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)) * strength
 		tween.tween_property(self, "position", random_movement, 0.02)
