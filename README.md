@@ -1,3 +1,6 @@
+
+
+
 <a id="readme-top"></a>
 
 <!-- SHIELDS -->
@@ -11,7 +14,7 @@
 <br />
 <div align="center">
     <a href="https://github.com/BudzioT/Godot_Super-Wakatime">
-        <img src="https://cloud-bo1ln2br1-hack-club-bot.vercel.app/0godotwaka22.png"  alt="Godot Wakatime"/>
+        <img src="https://user-cdn.hackclub-assets.com/019c586f-7727-7bdd-9465-4f449a8deb61/godotwaka22.png"  alt="Godot Wakatime"/>
     </a>
     <h3 align="center"> Godot Super Wakatime </h3>
     <p align="center">
