@@ -15,7 +15,10 @@ func _on_try_again_mouse_entered() -> void:
 	Blip.play()
 
 func _on_main_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	SceneManager.change_scene("res://Scenes/main_menu.tscn", {
+	"pattern": "squares",
+	"color": Color(0.268, 0.268, 0.268, 1.0)
+})
 
 func _on_try_again_pressed() -> void:
 	SceneManager.change_scene("res://Scenes/main_game.tscn", {

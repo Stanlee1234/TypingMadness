@@ -62,7 +62,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ce3w2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
 text = "Start Game "
 
-[node name="Start2" type="Button" parent="." unique_id=1600457571]
+[node name="Settings" type="Button" parent="." unique_id=1600457571]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -139,5 +139,5 @@ vertical_alignment = 1
 
 [connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="mouse_entered" from="Start2" to="." method="_on_start_mouse_entered"]
-[connection signal="pressed" from="Start2" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Settings" to="." method="_on_start_mouse_entered"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

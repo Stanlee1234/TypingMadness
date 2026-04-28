@@ -17,6 +17,10 @@ boot_splash/bg_color=Color(0.96862745, 0.92941177, 0.84705883, 1)
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=1000
 
+[audio]
+
+buses/default_bus_layout="uid://bqag13q76ss6f"
+
 [autoload]
 
 WordManager="*uid://c1glmm4bjxjkq"
@@ -31,7 +35,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [physics]
 

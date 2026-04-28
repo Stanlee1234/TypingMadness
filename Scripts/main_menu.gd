@@ -5,9 +5,19 @@ func _ready() -> void:
 	tween.tween_property(Bgm, "volume_db", -20.0, 1.0)
 
 func _on_start_pressed() -> void:
-	SceneManager.change_scene("res://Scenes/main_game.tscn", { "pattern": "squares", "color": Color(0.111, 0.339, 0.329, 1.0), "speed": 2 })
+	SceneManager.change_scene("res://Scenes/main_game.tscn", {
+	"pattern": "squares",
+	"color": Color(0.268, 0.268, 0.268, 1.0)
+})
 
 
 
 func _on_start_mouse_entered() -> void:
 	Blip.play()
+
+
+func _on_settings_pressed() -> void:
+	SceneManager.change_scene("res://Scenes/settings.tscn", {
+	"pattern": "squares",
+	"color": Color(0.268, 0.268, 0.268, 1.0)
+})

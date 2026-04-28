@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://c0wmyt2ol240u"]
+
+[ext_resource type="Shader" uid="uid://b4i632mtv5wam" path="res://Scripts/scroll.gdshader" id="1_6kjsr"]
+[ext_resource type="Texture2D" uid="uid://cvwo54qsanrws" path="res://Assets/background_img.png" id="2_ukbvw"]
+[ext_resource type="FontFile" uid="uid://eugx1clmg8v3" path="res://Assets/Fonts/ChailceNogginRegular-2OXoW.ttf" id="3_qajx3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x1egb"]
+shader = ExtResource("1_6kjsr")
+shader_parameter/SPEED = 0.13
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6kjsr"]
+load_path = "res://.godot/imported/Fruit+.png-e87bedb64b2ab51135983fb5ab9769e2.ctex"
+
+[node name="Cover" type="Control" unique_id=821259851]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bkg" type="TextureRect" parent="." unique_id=329601658]
+z_index = -4096
+material = SubResource("ShaderMaterial_x1egb")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("2_ukbvw")
+stretch_mode = 1
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1170244153]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -501.25
+offset_top = -274.0
+offset_right = 501.25
+offset_bottom = -99.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_qajx3")
+theme_override_fonts/bold_font = ExtResource("3_qajx3")
+theme_override_fonts/bold_italics_font = ExtResource("3_qajx3")
+theme_override_fonts/italics_font = ExtResource("3_qajx3")
+theme_override_fonts/mono_font = ExtResource("3_qajx3")
+theme_override_font_sizes/normal_font_size = 126
+theme_override_font_sizes/bold_font_size = 126
+theme_override_font_sizes/bold_italics_font_size = 126
+theme_override_font_sizes/italics_font_size = 126
+theme_override_font_sizes/mono_font_size = 126
+bbcode_enabled = true
+text = "[tornado radius=4 freq=2][rainbow freq=0.16]Typing Madness 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="." unique_id=1444516254]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -100.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_qajx3")
+theme_override_fonts/bold_font = ExtResource("3_qajx3")
+theme_override_fonts/bold_italics_font = ExtResource("3_qajx3")
+theme_override_fonts/italics_font = ExtResource("3_qajx3")
+theme_override_fonts/mono_font = ExtResource("3_qajx3")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[wave]A fun, infinite typing game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1151141573]
+position = Vector2(344.00003, 512)
+rotation = -0.09773844
+scale = Vector2(25.173021, 25.173021)
+texture = SubResource("CompressedTexture2D_6kjsr")
+hframes = 38
+vframes = 6
+frame = 11
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1022975622]
+position = Vector2(576, 568)
+rotation = 0.3403392
+scale = Vector2(25.173021, 25.173021)
+texture = SubResource("CompressedTexture2D_6kjsr")
+hframes = 38
+vframes = 6
+frame = 20
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1387786627]
+position = Vector2(1048, 536)
+rotation = -0.43982297
+scale = Vector2(25.173021, 25.173021)
+texture = SubResource("CompressedTexture2D_6kjsr")
+hframes = 38
+vframes = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=60658818]
+position = Vector2(111.999985, 520)
+rotation = 0.73129296
+scale = Vector2(25.173021, 25.173021)
+texture = SubResource("CompressedTexture2D_6kjsr")
+hframes = 38
+vframes = 6
+frame = 12
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=871711720]
+position = Vector2(792, 568)
+rotation = -0.43982297
+scale = Vector2(25.173021, 25.173021)
+texture = SubResource("CompressedTexture2D_6kjsr")
+hframes = 38
+vframes = 6
+frame = 27
