@@ -28,6 +28,7 @@ FactManager="*uid://qskp7yb4q87m"
 Bgm="*uid://sgthb6s6oieh"
 Blip="*uid://b4ovntxkex5qq"
 SceneManager="*uid://j20v4cg7v8m1"
+GameManager="*uid://hnx56r8qemf4"
 
 [display]
 

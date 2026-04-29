@@ -25,7 +25,7 @@ func load_local_words() -> void:
 		
 		print("Loaded %d words from the local file." % valid_words.size())
 	else:
-		print("ERROR: Could not find res://words.txt!")
+		print("ERROR: Could not find res://Texts/words.txt!")
 
 func is_word_valid(word_to_check: String) -> bool:
 	return valid_words.has(word_to_check.to_lower())

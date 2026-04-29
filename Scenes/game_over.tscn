@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://b4i632mtv5wam" path="res://Scripts/scroll.gdshader" id="2_14u15"]
 [ext_resource type="Texture2D" uid="uid://cvwo54qsanrws" path="res://Assets/background_img.png" id="3_j3ryr"]
 [ext_resource type="FontFile" uid="uid://eugx1clmg8v3" path="res://Assets/Fonts/ChailceNogginRegular-2OXoW.ttf" id="4_14u15"]
+[ext_resource type="Shader" uid="uid://bkharopfsyxfk" path="res://Scripts/crt_effect.gdshader" id="5_14u15"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rjluv"]
 shader = ExtResource("2_14u15")
@@ -17,6 +18,12 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjluv"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j3ryr"]
+shader = ExtResource("5_14u15")
+
+[sub_resource type="QuadMesh" id="QuadMesh_rjluv"]
+size = Vector2(1152, 648)
 
 [node name="Game_Over" type="Control" unique_id=603467969]
 layout_mode = 3
@@ -104,9 +111,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -144.0
-offset_top = 95.0
+offset_top = 119.0
 offset_right = 146.0
-offset_bottom = 160.0
+offset_bottom = 184.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.62969893, 0.93954855, 0.9769382, 1)
@@ -115,7 +122,7 @@ theme_override_colors/font_pressed_color = Color(0.1531378, 0.59244573, 0.634827
 theme_override_colors/font_hover_color = Color(0.29539204, 0.8377677, 0.8936647, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.29411766, 0.8392157, 0.89411765, 1)
 theme_override_fonts/font = ExtResource("4_14u15")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 51
 theme_override_styles/normal = SubResource("StyleBoxFlat_14u15")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j3ryr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rjluv")
@@ -129,9 +136,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -145.0
-offset_top = 151.5
+offset_top = 199.5
 offset_right = 145.0
-offset_bottom = 216.5
+offset_bottom = 264.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.62969893, 0.93954855, 0.9769382, 1)
@@ -140,12 +147,21 @@ theme_override_colors/font_pressed_color = Color(0.1531378, 0.59244573, 0.634827
 theme_override_colors/font_hover_color = Color(0.29539204, 0.8377677, 0.8936647, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.29411766, 0.8392157, 0.89411765, 1)
 theme_override_fonts/font = ExtResource("4_14u15")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 51
 theme_override_styles/normal = SubResource("StyleBoxFlat_14u15")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j3ryr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rjluv")
 text = "Main Menu
 "
+
+[node name="CRT" type="CanvasLayer" parent="." unique_id=749150295]
+process_mode = 3
+offset = Vector2(576, 324)
+transform = Transform2D(1, 0, 0, 1, 576, 324)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CRT" unique_id=1176260493]
+material = SubResource("ShaderMaterial_j3ryr")
+mesh = SubResource("QuadMesh_rjluv")
 
 [connection signal="mouse_entered" from="TryAgain" to="." method="_on_try_again_mouse_entered"]
 [connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]

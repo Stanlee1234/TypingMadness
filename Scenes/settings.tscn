@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://ljj8v60chapp"]
 
 [ext_resource type="Script" uid="uid://dbxwikeq7bvb" path="res://Scripts/settings.gd" id="1_4geyq"]
+[ext_resource type="Shader" uid="uid://bkharopfsyxfk" path="res://Scripts/crt_effect.gdshader" id="2_i44u3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lhmql"]
+shader = ExtResource("2_i44u3")
+
+[sub_resource type="QuadMesh" id="QuadMesh_aaqfp"]
+size = Vector2(1152, 648)
 
 [node name="Settings" type="Control" unique_id=942412904]
 layout_mode = 3
@@ -25,5 +32,14 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Back"
+
+[node name="CRT" type="CanvasLayer" parent="." unique_id=308061267]
+process_mode = 3
+offset = Vector2(576, 324)
+transform = Transform2D(1, 0, 0, 1, 576, 324)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CRT" unique_id=710635700]
+material = SubResource("ShaderMaterial_lhmql")
+mesh = SubResource("QuadMesh_aaqfp")
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

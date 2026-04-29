@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cvwo54qsanrws" path="res://Assets/background_img.png" id="4_ce3w2"]
 [ext_resource type="Shader" uid="uid://b4i632mtv5wam" path="res://Scripts/scroll.gdshader" id="4_n45e2"]
 [ext_resource type="FontFile" uid="uid://eugx1clmg8v3" path="res://Assets/Fonts/ChailceNogginRegular-2OXoW.ttf" id="4_opfnp"]
+[ext_resource type="Shader" uid="uid://bkharopfsyxfk" path="res://Scripts/crt_effect.gdshader" id="5_n45e2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_opfnp"]
 shader = ExtResource("4_n45e2")
@@ -17,6 +18,12 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cp0ys"]
+shader = ExtResource("5_n45e2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_yhxw7"]
+size = Vector2(1152, 648)
 
 [node name="Main_Menu" type="Control" unique_id=1786076981]
 layout_mode = 3
@@ -136,6 +143,15 @@ bbcode_enabled = true
 text = "[wave]A fun, infinite typing game"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CRT" type="CanvasLayer" parent="." unique_id=1810989655]
+process_mode = 3
+offset = Vector2(576, 324)
+transform = Transform2D(1, 0, 0, 1, 576, 324)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CRT" unique_id=760997191]
+material = SubResource("ShaderMaterial_cp0ys")
+mesh = SubResource("QuadMesh_yhxw7")
 
 [connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
