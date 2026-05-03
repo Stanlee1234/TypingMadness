@@ -1,7 +1,8 @@
 extends Control
-
+#variables so yeah
+#this project was made entirely by me
 @onready var pause_menu = $PauseMenu
-
+@onready var auto_typer_timer = $AutoTyperTimer
 var active_fruit = null
 var fruit_scene = preload("res://Scenes/fruit.tscn")
 var master_bus_idx = AudioServer.get_bus_index("Master")
@@ -83,10 +84,13 @@ func _on_spawn_timer_timeout() -> void:
 	spawn_fruit()
 
 func update_auto_typer() -> void:
-	if GameManager.auto_typer_level > 0:
-		$AutoTyperTimer.wait_time = 1.0 / GameManager.auto_typer_level
-		if $AutoTyperTimer.is_stopped():
-			$AutoTyperTimer.start()
+	if GameManager.auto_typer_level == 0:
+		auto_typer_timer.stop()
+	else:
+		var type_speed = max(0.1, 2.0 - (GameManager.auto_typer_level * 0.2))
+		auto_typer_timer.wait_time = type_speed
+		if auto_typer_timer.is_stopped():
+			auto_typer_timer.start()
 
 func _on_auto_typer_timer_timeout() -> void:
 	if is_instance_valid(active_fruit):
