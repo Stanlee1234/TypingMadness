@@ -2,6 +2,16 @@
 
 [ext_resource type="Script" uid="uid://dbxwikeq7bvb" path="res://Scripts/settings.gd" id="1_4geyq"]
 [ext_resource type="Shader" uid="uid://bkharopfsyxfk" path="res://Scripts/crt_effect.gdshader" id="2_i44u3"]
+[ext_resource type="FontFile" uid="uid://eugx1clmg8v3" path="res://Assets/Fonts/ChailceNogginRegular-2OXoW.ttf" id="2_lhmql"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aaqfp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2dne"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kysc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lhmql"]
 shader = ExtResource("2_i44u3")
@@ -18,19 +28,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4geyq")
 
-[node name="BackButton" type="Button" parent="." unique_id=1270520352]
+[node name="Start" type="Button" parent="." unique_id=944852189]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -22.5
-offset_top = -15.5
-offset_right = 22.5
-offset_bottom = 15.5
+offset_left = -154.0
+offset_top = 213.0
+offset_right = 154.0
+offset_bottom = 267.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.62969893, 0.93954855, 0.9769382, 1)
+theme_override_colors/font_focus_color = Color(0.39989382, 0.88826257, 0.9409068, 1)
+theme_override_colors/font_pressed_color = Color(0.1531378, 0.59244573, 0.63482785, 1)
+theme_override_colors/font_hover_color = Color(0.29539204, 0.8377677, 0.8936647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.29411766, 0.8392157, 0.89411765, 1)
+theme_override_fonts/font = ExtResource("2_lhmql")
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = SubResource("StyleBoxFlat_aaqfp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j2dne")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6kysc")
 text = "Back"
 
 [node name="CRT" type="CanvasLayer" parent="." unique_id=308061267]
@@ -42,4 +62,66 @@ transform = Transform2D(1, 0, 0, 1, 576, 324)
 material = SubResource("ShaderMaterial_lhmql")
 mesh = SubResource("QuadMesh_aaqfp")
 
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[node name="MasterSlider" type="HSlider" parent="." unique_id=490137981]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -112.0
+offset_right = 160.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="Label" type="Label" parent="MasterSlider" unique_id=617286708]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -43.5
+offset_right = 59.0
+offset_bottom = -20.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Master Volume"
+
+[node name="MusicSlider" type="HSlider" parent="." unique_id=1617287547]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="Label" type="Label" parent="MusicSlider" unique_id=314290269]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -43.5
+offset_right = 54.5
+offset_bottom = -20.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Music Volume"

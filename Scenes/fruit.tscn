@@ -14,9 +14,9 @@ script = ExtResource("1_o20pv")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=85842662]
 offset_left = -141.53845
-offset_top = 30.769234
+offset_top = 30.769236
 offset_right = 141.53851
-offset_bottom = 77.769226
+offset_bottom = 77.76923
 theme_override_fonts/normal_font = ExtResource("2_51687")
 theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true

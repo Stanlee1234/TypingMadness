@@ -7,4 +7,5 @@ process_mode = 3
 stream = ExtResource("1_jijru")
 volume_db = -15.0
 autoplay = true
+bus = &"Music"
 parameters/looping = true

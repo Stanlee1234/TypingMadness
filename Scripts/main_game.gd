@@ -1,6 +1,6 @@
 extends Control
-#variables so yeah
-#this project was made entirely by me
+
+#Variables
 @onready var pause_menu = $PauseMenu
 @onready var auto_typer_timer = $AutoTyperTimer
 var active_fruit = null
@@ -8,6 +8,7 @@ var fruit_scene = preload("res://Scenes/fruit.tscn")
 var master_bus_idx = AudioServer.get_bus_index("Master")
 var low_pass_effect = AudioServer.get_bus_effect(master_bus_idx, 0)
 
+#Functions
 func _ready() -> void:
 	if WordManager.is_ready:
 		_on_dictionary_loaded()
