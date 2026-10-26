@@ -125,3 +125,6 @@ offset_bottom = -20.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Music Volume"
+
+[connection signal="value_changed" from="MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
